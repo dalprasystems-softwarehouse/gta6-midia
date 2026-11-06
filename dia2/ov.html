@@ -1,0 +1,111 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box}html,body{margin:0;background:transparent}
+body{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:"Inter Display","Inter",sans-serif;color:#fff}
+.abs{position:absolute}
+.y{color:#FFD23F}
+/* card */
+.frame{left:36px;top:556px;width:1008px;height:570px;border:9px solid #FFD23F;border-radius:20px;box-shadow:0 0 40px rgba(255,210,63,.55),0 0 0 3px #1B1430 inset}
+.tab{left:70px;top:520px;height:66px;padding:0 26px 0 20px;background:#FFD23F;color:#1B1430;border-radius:12px;display:flex;align-items:center;gap:14px;font-weight:800;font-size:30px;letter-spacing:.22em;box-shadow:0 6px 18px rgba(0,0,0,.45)}
+.tab svg{width:30px;height:34px}
+.count{right:52px;top:494px;font-weight:900;font-size:76px;letter-spacing:-2px;-webkit-text-stroke:10px #1B1430;paint-order:stroke fill;}
+.panel{left:45px;top:565px;width:990px;height:552px;border-radius:12px;background:linear-gradient(100deg,rgba(14,10,26,0) 46%,rgba(14,10,26,.78) 62%,rgba(14,10,26,.92) 100%)}
+.ribbon{right:58px;top:612px;background:#E4477A;color:#fff;font-weight:800;font-size:27px;letter-spacing:.18em;padding:12px 22px;transform:rotate(3deg);box-shadow:0 6px 16px rgba(0,0,0,.45);border-radius:6px}
+.ptxt{left:690px;top:700px;width:330px}
+.ptxt .k{font-weight:700;font-size:20px;letter-spacing:.12em;color:#FFD23F;margin-bottom:6px}
+.ptxt .t{font-weight:900;font-size:50px;line-height:.98;letter-spacing:-1px;text-transform:uppercase}
+.ptxt .d{margin-top:14px;font-family:Inter;font-weight:600;font-size:22px;line-height:1.3;color:#EDE6F2}
+/* below card */
+.cat{left:0;right:0;top:1158px;text-align:center;font-weight:800;font-size:30px;letter-spacing:.32em;color:#FFD23F;-webkit-text-stroke:6px #1B1430;paint-order:stroke fill}
+.big{left:30px;right:30px;top:1196px;text-align:center;font-weight:900;font-size:92px;line-height:1;letter-spacing:-2px;text-transform:uppercase;-webkit-text-stroke:14px #1B1430;paint-order:stroke fill;text-shadow:0 8px 20px rgba(0,0,0,.6)}
+.line{left:90px;right:90px;height:6px;background:#FFD23F;border-radius:3px;box-shadow:0 2px 8px rgba(0,0,0,.5)}
+.sub{left:0;right:0;text-align:center;font-family:Inter;font-weight:800;font-size:40px;-webkit-text-stroke:8px #1B1430;paint-order:stroke fill}
+/* stack */
+.stack{left:30px;right:30px;top:1150px;display:flex;flex-direction:column;align-items:center}
+.cat2{font-weight:800;font-size:30px;letter-spacing:.32em;color:#FFD23F;-webkit-text-stroke:6px #1B1430;paint-order:stroke fill}
+.big2{margin-top:2px;text-align:center;font-weight:900;line-height:.98;letter-spacing:-2px;text-transform:uppercase;-webkit-text-stroke:14px #1B1430;paint-order:stroke fill;text-shadow:0 8px 20px rgba(0,0,0,.6)}
+.line2{margin-top:14px;width:86%;height:6px;background:#FFD23F;border-radius:3px;box-shadow:0 2px 8px rgba(0,0,0,.5)}
+.sub2{margin-top:10px;text-align:center;font-family:Inter;font-weight:800;font-size:40px;-webkit-text-stroke:8px #1B1430;paint-order:stroke fill}
+/* chrome */
+.badge{left:34px;top:250px;display:flex;align-items:center;gap:22px}
+.badge .b{width:78px;height:78px;border-radius:16px;background:#FFD23F;color:#1B1430;font-weight:900;font-size:50px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(0,0,0,.4)}
+.badge .l{font-weight:800;font-size:34px;letter-spacing:.12em;-webkit-text-stroke:6px #1B1430;paint-order:stroke fill}
+.logo{right:40px;top:246px;display:flex;flex-direction:column;align-items:center;opacity:.9}
+.logo .p{background:#E4477A;padding:4px 14px;border-radius:8px;font-weight:900;font-size:30px;letter-spacing:-.5px}
+.logo .n{font-weight:900;font-size:34px;letter-spacing:-.5px;-webkit-text-stroke:6px #1B1430;paint-order:stroke fill;margin-top:2px}
+/* table */
+.tt{left:0;right:0;top:560px;text-align:center;font-weight:900;font-size:84px;letter-spacing:-1px;-webkit-text-stroke:14px #1B1430;paint-order:stroke fill}
+.tbl{left:44px;right:44px;top:680px;background:rgba(20,16,36,.93);border-radius:22px;border:3px solid rgba(255,255,255,.12);padding:18px 22px 10px;box-shadow:0 20px 50px rgba(0,0,0,.55)}
+.row{display:grid;grid-template-columns:1fr 220px 220px;align-items:center;min-height:98px;border-bottom:2px solid rgba(255,255,255,.08);font-family:Inter;font-weight:800;font-size:36px}
+.row:last-child{border-bottom:0}
+.hd{min-height:84px}
+.pill{justify-self:center;font-family:"Inter Display";font-weight:900;font-size:30px;padding:8px 14px;border-radius:10px;color:#1B1430}
+.ok,.no{justify-self:center;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.ok{background:#2BD47D}.no{background:#F0506E}
+.ok svg,.no svg{width:34px;height:34px}
+/* extra */
+.xcard{left:44px;right:44px;top:600px;background:rgba(20,16,36,.94);border:9px solid #FFD23F;border-radius:22px;padding:30px 34px;box-shadow:0 0 40px rgba(255,210,63,.5)}
+.xrow{display:flex;align-items:center;gap:26px;padding:22px 0;border-bottom:2px solid rgba(255,255,255,.1)}
+.xrow:last-child{border-bottom:0}
+.xic{width:92px;height:92px;border-radius:18px;background:#E4477A;display:flex;align-items:center;justify-content:center;font-size:52px;flex:none}
+.xt{font-weight:900;font-size:50px;letter-spacing:-1px;text-transform:uppercase;line-height:1}
+.xd{font-family:Inter;font-weight:600;font-size:28px;color:#EDE6F2;margin-top:6px}
+/* hook/outro */
+.h1{left:30px;right:30px;text-align:center;font-weight:900;letter-spacing:-2px;line-height:1;-webkit-text-stroke:16px #1B1430;paint-order:stroke fill;text-shadow:0 10px 24px rgba(0,0,0,.6)}
+.vs{display:flex;gap:26px;justify-content:center}
+.vs div{font-weight:900;font-size:64px;padding:14px 30px;border-radius:16px;color:#1B1430;box-shadow:0 10px 26px rgba(0,0,0,.5)}
+</style></head><body><div id="root"></div>
+<script>
+const P=new URLSearchParams(location.search);const v=P.get('v');const R=document.getElementById('root');
+const lock='<svg viewBox="0 0 24 28"><rect x="2" y="12" width="20" height="15" rx="3" fill="#1B1430"/><path d="M7 12V8a5 5 0 0 1 9.6-2" stroke="#1B1430" stroke-width="3.2" fill="none" stroke-linecap="round"/></svg>';
+const ok='<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#0E2A1C" stroke-width="3.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const no='<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="#3A0D18" stroke-width="3.6" stroke-linecap="round"/></svg>';
+const C={
+1:['VEÍCULO','GROTTI CHEETAH','Esportivo de 1995 liberado mais tarde','EXCLUSIVO DA ULTIMATE','GROTTI CHEETAH (1995)','Esportivo dos anos 90 com pintura retrofuturista.'],
+2:['ARMAS','REVÓLVERES HAWK & LITTLE MORGAN','No estilo da Mansão Vercetti','EXCLUSIVO DA ULTIMATE','HAWK & LITTLE MORGAN','Par de revólveres gravados, com cabo de palmeira e luneta.'],
+3:['ARMAS','PISTOLAS PERSONALIZADAS','Gravadas para Jason e Lucia','EXCLUSIVO DA ULTIMATE','PISTOLAS GRAVADAS','Girardi ES9 do Jason e Klose K17 da Lucia.'],
+4:['BARCO','SHITZU SQUALO','Lancha com caixa de explosivos','EXCLUSIVO DA ULTIMATE','SHITZU SQUALO','Lancha rosa e azul ancorada em Washington Beach.'],
+5:['VEÍCULO','DOMINATOR BUGGY (1967)','Off-road para o Mount Kalaga','EXCLUSIVO DA ULTIMATE','VAPID DOMINATOR BUGGY','Vem com a garagem Paradise, em Watson Bay.'],
+6:['VEÍCULO','GANADO RETRÔ','A picape do Jason modificada','EXCLUSIVO DA ULTIMATE','VAPID GANADO','Picape do Jason com peças retrô exclusivas.'],
+7:['MISSÃO','REDUTO DA PTT YOUNGIN$','Invasão atrás de itens especiais','EXCLUSIVO DA ULTIMATE','REDUTO DA GANGUE','Território no Lado Sul de Vice City com contrabando.'],
+8:['LOJA','STOCK 305','Roupas de rua exclusivas','SÓ ABRE NA ULTIMATE','LOJA DE ROUPAS','Looks únicos para Jason e Lucia, em Stockyard.'],
+9:['TATUAGEM','ELECTRIC FANG TATTOO','Mais de 50 tatuagens exclusivas','SÓ ABRE NA ULTIMATE','ESTÚDIO DE TATUAGEM','Desenhos criados pelo coletivo de arte FAILE.'],
+10:['VISUAL','ESTILO VICE CITY','Roupas, cabelos e tatuagens','EXCLUSIVO DA ULTIMATE','ESTILO VICE CITY','Visuais exclusivos para Jason e Lucia.']};
+let h='';
+if(v==='chrome'){
+ h=`<div class="abs badge"><div class="b">$</div><div class="l">GTA 6 · ULTIMATE</div></div>
+ <div class="abs logo"><div class="p">PLANTÃO</div><div class="n">LEONIDA</div></div>`;
+}else if(v==='tint'){
+ document.body.style.background='radial-gradient(ellipse at 50% 45%,rgba(20,12,36,.25) 0%,rgba(20,12,36,.55) 60%,rgba(12,8,22,.8) 100%)';
+}else if(v==='rays'){
+ document.body.style.width='2400px';document.body.style.height='2400px';
+ let s='<svg class="abs" style="left:0;top:0" width="2400" height="2400" viewBox="0 0 2400 2400"><defs><radialGradient id="g"><stop offset="0" stop-color="#FFD23F" stop-opacity=".55"/><stop offset=".5" stop-color="#FFD23F" stop-opacity=".22"/><stop offset="1" stop-color="#FFD23F" stop-opacity="0"/></radialGradient></defs><g fill="url(#g)">';
+ for(let i=0;i<14;i++){const a=i*360/14;s+=`<path d="M1200 1200 L${1200+1400*Math.cos((a-4.5)*Math.PI/180)} ${1200+1400*Math.sin((a-4.5)*Math.PI/180)} L${1200+1400*Math.cos((a+4.5)*Math.PI/180)} ${1200+1400*Math.sin((a+4.5)*Math.PI/180)}Z"/>`;}
+ s+='</g></svg>';h=s;
+}else if(v==='tabela'){
+ const rows=[['Jogo completo',1,1],['Mesma história',1,1],['Mesma data: 19/11',1,1],['Pacote Vintage Vice City*',1,1],['Mês de GTA+ (digital)',1,1],['Acesso antecipado',0,0]];
+ h=`<div class="abs tt">O QUE NÃO MUDA</div><div class="abs tbl"><div class="row hd"><div></div><div class="pill" style="background:#4CC9F0">STANDARD</div><div class="pill" style="background:#FFD23F">ULTIMATE</div></div>`+
+ rows.map(r=>`<div class="row"><div>${r[0]}</div><div class="${r[1]?'ok':'no'}">${r[1]?ok:no}</div><div class="${r[2]?'ok':'no'}">${r[2]?ok:no}</div></div>`).join('')+
+ `<div style="font-family:Inter;font-weight:600;font-size:24px;color:#BFB4CC;padding:10px 0 8px">*Na pré-venda, até 19/11.</div></div>`;
+}else if(v==='extra'){
+ const xs=[['🔧','RIDEOUT CUSTOMS','Personalização de carros'],['💈','SALÃO SARA\'S','Barba, maquiagem e unhas'],['🛻','OFICINA DO WILLIE CAOLHO','Modificação off-road']];
+ h=`<div class="abs xcard">`+xs.map(x=>`<div class="xrow"><div class="xic">${x[0]}</div><div><div class="xt">${x[1]}</div><div class="xd">${x[2]}</div></div></div>`).join('')+`</div>
+ <div class="abs ribbon" style="top:572px;right:70px">SÓ ABREM NA ULTIMATE</div><div class="abs tab" style="top:560px">${lock}E AINDA...</div>`;
+}else if(v==='hook'){
+ h=`<div class="abs h1" style="top:470px;font-size:112px">VALE PAGAR<br><span class="y">+R$ 100</span><br>NO GTA 6?</div>
+ <div class="abs vs" style="left:0;right:0;top:1000px"><div style="background:#4CC9F0">STANDARD</div><div style="background:#FFD23F">ULTIMATE</div></div>`;
+}else if(v==='outro'){
+ h=`<div class="abs h1" style="top:520px;font-size:104px">E AÍ, QUAL<br>VOCÊ VAI<br>COMPRAR?</div>
+ <div class="abs vs" style="left:0;right:0;top:960px"><div style="background:#4CC9F0">STANDARD</div><div style="background:#FFD23F">ULTIMATE</div></div>
+ <div class="abs sub" style="top:1110px;font-size:48px">Comenta aqui 👇</div>`;
+}else{
+ const c=C[v];const n=+v;
+ const big=c[1].length>22?72:92;
+ h=`<div class="abs panel"></div><div class="abs frame"></div>
+ <div class="abs tab">${lock}ITEM DESBLOQUEADO</div>
+ <div class="abs count">${n}/10</div>
+ <div class="abs ribbon">${c[3]}</div>
+ <div class="abs ptxt"><div class="k">ULTIMATE EDITION</div><div class="t">${c[4]}</div><div class="d">${c[5]}</div></div>
+ <div class="abs stack"><div class="cat2">${c[0]}</div><div class="big2" style="font-size:${big}px">${c[1]}</div><div class="line2"></div><div class="sub2">${c[2]}</div></div>`;
+}
+R.innerHTML=h;
+</script></body></html>
