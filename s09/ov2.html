@@ -1,0 +1,46 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css"></head><body><div id="root"></div>
+<script>
+const P=new URLSearchParams(location.search);const v=P.get('v');const S=P.get('s');const R=document.getElementById('root');
+const lock='<svg viewBox="0 0 24 28" style="width:30px;height:34px"><rect x="2" y="12" width="20" height="15" rx="3" fill="#1B1430"/><path d="M7 12V8a5 5 0 0 1 9.6-2" stroke="#1B1430" stroke-width="3.2" fill="none" stroke-linecap="round"/></svg>';
+const siren='<span style="font-size:34px;line-height:1">🚨</span>';
+const D={
+pl:{badge:['🚨','PLANTÃO · PRÉ-LOAD'],tab:[siren,'PLANTÃO'],total:6,
+ cards:{1:['PRÉ-LOAD','XBOX: HOJE ÀS 21H','Horário de Brasília','CONFIRMADO'],
+ 2:['PRÉ-LOAD','PS5: MEIA-NOITE','Já na terça, 10/11','CONFIRMADO'],
+ 3:['ESPAÇO','ATÉ 212 GB','Depende do console','CONFIRMADO'],
+ 4:['ATENÇÃO','NÃO LIBERA ANTES','Todo mundo joga em 19/11','CONFIRMADO'],
+ 5:['MÍDIA FÍSICA','CAIXA SEM DISCO','Só código · nas lojas em 12/11','CONFIRMADO'],
+ 6:['PRÉ-VENDA','+7 MILHÕES DE CÓPIAS','Só no digital · Sensor Tower','RECORDE'],
+ 7:['DICA','MODO REPOUSO','Baixa sozinho durante a noite','SALVA ESSA',true]},
+ hook:['GTA 6 COMEÇA<br>A BAIXAR <span class="y">HOJE</span>',[['XBOX 21H','#4CC9F0'],['PS5 00H','#FFD23F']]],
+ outro:['VOCÊ VAI<br>JOGAR NO...',[['XBOX','#4CC9F0'],['PS5','#FFD23F']],'Salva e comenta 👇']},
+cs:{badge:['▶','GTA 6 · GAMEPLAY'],tab:[lock,'DESBLOQUEADO'],total:8,
+ cards:{1:['CASAL','ANDAR DE MÃOS DADAS','Tem botão só pra isso','GAMEPLAY OFICIAL'],
+ 2:['REDES SOCIAIS','FAZER LIVE','Com chat ao vivo na tela','GAMEPLAY OFICIAL'],
+ 3:['NA RUA','SELFIE COM NPC','Interaja com quem passa','GAMEPLAY OFICIAL'],
+ 4:['ACADEMIA','MALHAR','A Lucia treinando supino','GAMEPLAY OFICIAL'],
+ 5:['CORRIDA','MOTOCROSS','Com volta e cronômetro','GAMEPLAY OFICIAL'],
+ 6:['RADICAL','SALTO DE PARAQUEDAS','Vice City lá embaixo','GAMEPLAY OFICIAL'],
+ 7:['POLÍCIA','FUGIR DA POLÍCIA','Procurado em estrelas','GAMEPLAY OFICIAL'],
+ 8:['NOITE','FESTA E BOATE','Piscina, neon e música','GAMEPLAY OFICIAL']},
+ hook:['<span class="y">8 COISAS</span><br>QUE VOCÊ VAI<br>FAZER NO GTA 6',[]],
+ outro:['QUAL VOCÊ<br>FAZ PRIMEIRO?',[],'Comenta aqui 👇']}};
+const d=D[S];let h='';
+if(v==='chrome'){
+ h=`<div class="abs badge"><div class="b" style="font-size:42px">${d.badge[0]}</div><div class="l">${d.badge[1]}</div></div>
+ <div class="abs logo"><div class="p">PLANTÃO</div><div class="n">LEONIDA</div></div>`;
+}else if(v==='hook'||v==='outro'){
+ const x=d[v];
+ h=`<div class="abs h1" style="top:${v==='hook'?430:500}px;font-size:112px">${x[0]}</div>`+
+  (x[1].length?`<div class="abs vs" style="left:0;right:0;top:${v==='hook'?1000:960}px">${x[1].map(p=>`<div style="background:${p[1]}">${p[0]}</div>`).join('')}</div>`:'')+
+  (x[2]?`<div class="abs sub" style="top:${x[1].length?1110:900}px;font-size:52px">${x[2]}</div>`:'');
+}else{
+ const c=d.cards[v];const n=+v;const big=c[1].length>16?78:96;
+ h=`<div class="abs frame"></div>
+ <div class="abs tab">${d.tab[0]}${c[4]?'DICA':d.tab[1]}</div>
+ ${c[4]?'':`<div class="abs count">${n}/${d.total}</div>`}
+ <div class="abs ribbon">${c[3]}</div>
+ <div class="abs stack"><div class="cat2">${c[0]}</div><div class="big2" style="font-size:${big}px">${c[1]}</div><div class="line2"></div><div class="sub2">${c[2]}</div></div>`;
+}
+R.innerHTML=h;
+</script></body></html>
