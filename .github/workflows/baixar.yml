@@ -1,0 +1,49 @@
+name: Baixar mídia oficial
+
+on:
+  push:
+    branches: [main]
+    paths: [videos.txt, baixar.sh, .github/workflows/baixar.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: baixar
+  cancel-in-progress: false
+
+jobs:
+  baixar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Instalar ferramentas
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -q -U "yt-dlp[default]"
+          yt-dlp --version
+
+      - name: Baixar e publicar
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash baixar.sh
+
+      - name: Salvar relatório
+        if: always()
+        run: |
+          git config user.name "robo-midia"
+          git config user.email "robo-midia@users.noreply.github.com"
+          git add status.md
+          git commit -m "Relatório da execução [skip ci]" || exit 0
+          git pull --rebase -q && git push -q

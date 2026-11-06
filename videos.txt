@@ -1,0 +1,7 @@
+# Vídeos oficiais para baixar do canal da Rockstar no YouTube.
+# Formato: nome-do-arquivo | trecho do título (sem diferenciar maiúsculas)
+# Para pedir um novo, acrescente uma linha e faça commit: o robô roda sozinho.
+trailer-2       | grand theft auto vi trailer 2
+extended-look   | extended look
+launch-trailer  | launch trailer
+trailer-1       | grand theft auto vi trailer 1
