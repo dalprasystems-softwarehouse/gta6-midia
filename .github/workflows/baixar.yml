@@ -1,9 +1,6 @@
 name: Baixar mídia oficial
 
 on:
-  push:
-    branches: [main]
-    paths: [videos.txt, baixar.sh, .github/workflows/baixar.yml]
   workflow_dispatch:
 
 permissions:
