@@ -15,6 +15,8 @@ body{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:"I
 .cur{left:56px;width:860px;top:1405px}
 .cur .k{display:flex;align-items:center;gap:14px;font-weight:800;font-size:28px;letter-spacing:.24em;color:#FFD23F}
 .cur .dots{display:flex;gap:8px}.cur .dots i{width:34px;height:8px;border-radius:4px;background:#3A3150}.cur .dots i.on{background:#FFD23F}
+.q{left:56px;right:56px;top:1400px;text-align:left;font-weight:900;font-size:66px;line-height:1.04;letter-spacing:-1px}
+.q .k{font-weight:800;font-size:28px;letter-spacing:.24em;color:#FFD23F;margin-bottom:14px}
 .cur .t{margin-top:16px;font-weight:900;font-size:58px;line-height:1.05;letter-spacing:-1px}
 </style></head><body><div id="r"></div><script>
 const P=new URLSearchParams(location.search),S=P.get('s'),V=P.get('v');
@@ -22,6 +24,8 @@ const D={
 loja:{t:'No GTA 6 você<br><span class="y">prova a roupa</span><br>antes de comprar',c:['A loja fica num evento de lama no interior, com regata, short e boné','Você vê o preço e testa a peça no Jason: <span class="y">regata $29</span>, <span class="y">bermuda $32</span>','Tem botão de <span class="y">comprar e já sair vestido</span> 👕']},
 moto:{t:'Vazou a <span class="y">corrida de<br>motocross</span> do GTA 6',c:['São <span class="y">14 pilotos</span>, 2 voltas e cronômetro na tela','Caminhonetes off-road <span class="y">pulam a pista</span> no meio da corrida 😳','A moto é alugada, e cada uma tem atributos de <span class="y">velocidade e off-road</span>']},
 tuning:{t:'Vazou a <span class="y">oficina<br>de tuning</span> do GTA 6',c:['Tem kit pronto de corrida de rua e <span class="y">pintura fosca</span>','Motor stage 2, <span class="y">supercharger</span>, câmbio e <span class="y">nitro</span> 🔥','E dá até pra <span class="y">envelopar o carro com anime</span> 👀']},
+tuningS:{t:'Vazou a <span class="y">oficina<br>de tuning</span> do GTA 6',q:['Nitro, supercharger, pintura fosca e até <span class="y">envelopamento de anime</span> 👀','<span class="y">Nitro ou supercharger?</span><br>Comenta 👇']},
+rachaS:{t:'Vazou o <span class="y">racha<br>de rua</span> do GTA 6',q:['Encontro com neon e <span class="y">racha em grupo</span> pelas ruas de Vice City 🏁','<span class="y">Qual carro você levava pro racha?</span> Comenta 👇']},
 racha:{t:'Vazou o <span class="y">racha<br>de rua</span> do GTA 6',c:['Encontro de carros à noite, com <span class="y">neon embaixo</span> dos carros','Corrida em grupo com <span class="y">6 carros</span> pelas ruas de Vice City','Dá pra correr em <span class="y">primeira pessoa</span>, vendo o painel 🏁']}};
 const d=D[S];let h='';
 if(V==='base'){
@@ -30,6 +34,9 @@ if(V==='base'){
  <div class="a row"><div class="pill"><span>🚨</span>VAZOU</div><div class="logo"><div class="p">PLANTÃO</div><div class="n">LEONIDA</div></div></div>
  <div class="a title" style="font-size:${fs}px"><div>${d.t}</div></div>
  <div class="a disc">imagens vazadas · versão de teste · pode mudar no lançamento</div>`;
+}else if(V[0]==='q'){
+ const n=+V.slice(1);
+ h=`<div class="a q"><div class="k">${n===1?'VAZAMENTO':'E VOCÊ?'}</div>${d.q[n-1]}</div>`;
 }else{
  const n=+V;
  h=`<div class="a cur"><div class="k">CURIOSIDADE <div class="dots">${[1,2,3].map(i=>`<i class="${i<=n?'on':''}"></i>`).join('')}</div></div><div class="t">${d.c[n-1]}</div></div>`;
