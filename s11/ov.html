@@ -11,6 +11,7 @@ body{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:"I
 .logo .p{background:#E4477A;padding:3px 12px;border-radius:8px;font-weight:900;font-size:28px}
 .logo .n{font-weight:900;font-size:32px;margin-top:2px}
 .title{left:40px;right:40px;top:250px;height:250px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:900;font-size:96px;letter-spacing:-2px;line-height:1.02;text-transform:uppercase}
+.disc{left:0;right:0;top:1348px;text-align:center;font-family:Inter;font-weight:600;font-size:24px;color:#9C93B0;letter-spacing:.04em}
 .end{left:0;top:520px;width:1080px;height:810px;background:rgba(14,10,26,.82);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px}
 .end .q{font-weight:900;font-size:70px;letter-spacing:-1px;text-transform:uppercase;text-align:center;line-height:1.05}
 .vs{display:flex;align-items:center;gap:28px}
@@ -22,12 +23,13 @@ const D={
 caixa:{b:['🚨','PLANTÃO'],t:'A caixa do GTA 6<br><span class="y">não tem disco</span>',q:'E você?',o:[['CAIXA','#FFD23F'],['DIGITAL','#4CC9F0']]},
 casal:{b:['🎮','PERSONAGENS'],t:'Quem são<br><span class="y">Lucia</span> e <span class="y">Jason</span>?',q:'Vai jogar mais com...',o:[['LUCIA','#E4477A'],['JASON','#4CC9F0']]},
 ps5:{b:['📊','PRÉ-VENDA'],t:'<span class="y">74%</span> escolheu<br>o PS5 no GTA 6',q:'Qual é o seu time?',o:[['PS5','#4CC9F0'],['XBOX','#2BD47D']]},
+mapa:{b:['🗺️','VAZAMENTO'],t:'Vazou o <span class="y">mapa</span><br>do GTA 6',q:'Onde você vai morar?',o:[['VICE CITY','#E4477A'],['INTERIOR','#2BD47D']],d:'imagens: reprodução · mapa ainda não confirmado pela Rockstar'},
 namoradas:{b:['💔','AVISO'],t:'<span class="y">Aviso</span> pras<br>namoradas 🚨',q:'Dia 19 ele some 😂',o:[['MARCA ELA 👇','#FFD23F']]}};
 const d=D[S];let h='';
 if(V==='base'){
  h=`<div class="a top"></div><div class="a ln" style="top:513px"></div><div class="a bot"></div><div class="a ln" style="top:1330px"></div>
  <div class="a row"><div class="pill"><span>${d.b[0]}</span>${d.b[1]}</div><div class="logo"><div class="p">PLANTÃO</div><div class="n">LEONIDA</div></div></div>
- <div class="a title"><div>${d.t}</div></div>`;
+ <div class="a title"><div>${d.t}</div></div>${d.d?`<div class="a disc">${d.d}</div>`:''}`;
 }else{
  h=`<div class="a end"><div class="q">${d.q}</div><div class="vs">${d.o.map((p,i)=>(i?'<div class="x">ou</div>':'')+`<div class="o" style="background:${p[1]}">${p[0]}</div>`).join('')}</div></div>`;
 }
